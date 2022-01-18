@@ -1,0 +1,30 @@
+{
+"bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "FamilyContainer",
+      "databaseName": "AzureSampleFamilyDatabase",
+      "collectionName": "FamilyContainer",
+      "connectionStringSetting": "myCosmosDB",
+      "direction": "in",
+      "Id": "{Query.id}",
+      "PartitionKey": "{Query.partitionKeyValue}"
+    }
+  ],
+"scriptFile": "__init__.py"
+}
