@@ -1,8 +1,8 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=mycosmostest419;AccountKey=oq6wghBlDc2Id5tNxtRThd0N+rDX+M6mtNzRtpkL78E8jrnS5cJGvInqL2xMFycGQKG+F2ZmAgEN+bBE+Fr9Eg==;EndpointSuffix=core.windows.net",
+    "AzureWebJobsStorage": "",
     "FUNCTIONS_WORKER_RUNTIME": "python",
-    "myCosmosDB": "AccountEndpoint=https://cosmosdbserverlesstest.documents.azure.com:443/;AccountKey=RXgs7u3L2hjHN8qPAnB2zq9vMk33lfX7bF8rKLd3KAElMyJjDyjbw663KGJwn6CVamnJJoJ8UK690KzqTjXMyg==;"
+    "myCosmosDB": <cosmosdb_primary_connection_string>
   }
 }
