@@ -14,10 +14,6 @@ def main(req: func.HttpRequest, doc: func.DocumentList) -> func.HttpResponse:
         }
     users_json.append(user_json)
 
-
-
-
-
     return func.HttpResponse(
             json.dumps(users_json),
             status_code=200,

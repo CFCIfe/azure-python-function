@@ -1,32 +1,30 @@
 {
-    "scriptFile": "__init__.py",
-    "bindings": [
-        {
-            "authLevel": "anonymous",
-            "name": "req",
-            "type": "httpTrigger",
-            "direction": "in",
-            "methods": [
-                "get",
-                "post"
-            ],
-            "route": "user/list"
-        },
-        {
-            "type": "cosmosDB",
-            "name": "doc",
-            "databaseName": "AzureSampleFamilyDatabase",
-            "collectionName": "FamilyContainer",
-            "ConnectionStringSetting": "CosmosDbConnectionString",
-            "direction": "in",
-            "createIfNotExists": "true",
-            "sqlQuery": "SELECT * from c"
-        },
-        {
-            "name": "$return",
-            "type": "http",
-            "direction": "out"
-        }
-    ],
-    "disabled": false
+"bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "FamilyContainer",
+      "databaseName": "AzureSampleFamilyDatabase",
+      "collectionName": "FamilyContainer",
+      "connectionStringSetting": "myCosmosDB",
+      "direction": "in",
+      "Id": "{Query.id}",
+      "PartitionKey": "{Query.partitionKeyValue}"
+    }
+  ],
+"scriptFile": "__init__.py"
 }
